@@ -4,10 +4,10 @@ import { SignInForm } from '../components/sign-in-form';
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
       <SignInForm />
-    </div>
+    </>
   );
 }
 
