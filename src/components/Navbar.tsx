@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 
 export const Navbar = () => {
   return (
-      <AppBar>
+      <AppBar position="static">
         <Toolbar>
           <IconButton
             edge="start"

@@ -1,29 +1,40 @@
-import React, {useState}from "react";
+import React, { useState } from "react";
 import { Button, Stack, TextField } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
+
 export const SignInForm = () => {
     const styles = useStyles();
-    const [sign, setSign] = useState({login:'', password: ''})
+    const [formData, setFormData] = useState({login: '', password: ''});
 
-function hendleSubmit(e: any) {
-setSign(e.target.value)
-}
+    
+    const change=(e: any)=>{
 
+        setFormData({...formData,[e.target.name]:e.target.value})
+        
+        }
+
+    const onFormSubmit = (e: any) => {
+        e.preventDefault();
+        console.log('data', formData)
+    };
+
+    
     return (
         <div className={styles.centerBox}>
           <Stack
             component="form"
             sx={{
-              width: "45ch",
+              width: "45ch"
             }}
             spacing={2}
             noValidate
             autoComplete="off"
+            onSubmit={onFormSubmit}
           >
-            <TextField label="Логин" value={sign.login}/>
-            <TextField label="Пароль" type="password" value={sign.password}/>
-            <Button variant="contained" onClick={hendleSubmit}>Вход</Button>
+            <TextField label="Логин"  onChange={change} value={formData.login} name="login"/>
+            <TextField label="Пароль" type="password" value={formData.password} onChange={change} name="password"/>
+            <Button variant="contained" type="submit" >Вход</Button>
           </Stack>
         </div>
     );
