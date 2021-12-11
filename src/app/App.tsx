@@ -1,13 +1,12 @@
 import React from 'react';
-import { SignInForm } from '../profile';
-import { Layout } from './layout';
+import { Navbar } from '../components/Navbar';
+import { SignInForm } from '../components/sign-in-form';
 
 function App() {
   return (
     <div>
-      <Layout>
-        <SignInForm />
-      </Layout>
+      <Navbar />
+      <SignInForm />
     </div>
   );
 }

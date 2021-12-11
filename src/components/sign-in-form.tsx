@@ -1,12 +1,11 @@
 import React from "react";
-import { Button, Paper, Stack, TextField } from "@mui/material";
+import { Button, Stack, TextField } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
 export const SignInForm = () => {
     const styles = useStyles();
     return (
-      <div className={styles.centerBox}>
-        <Paper elevation={3} className={styles.stylePaper}>
+        <div className={styles.centerBox}>
           <Stack
             component="form"
             sx={{
@@ -20,19 +19,17 @@ export const SignInForm = () => {
             <TextField label="Пароль" />
             <Button variant="contained">Вход</Button>
           </Stack>
-        </Paper>
-      </div>
+        </div>
     );
   };
   
   const useStyles = makeStyles({
-  
-    stylePaper: {
-      padding: "75px 45px 75px 45px",
-    },
+
     centerBox: {
-      position: 'fixed',
-      top: "25%",
-      left: "38%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "750px",
     },
   });
